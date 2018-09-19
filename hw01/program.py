@@ -31,6 +31,8 @@ def part_pig_latin(name):
     word = name.lower()
     firstl = word[0]
     pig_latin = word[1:]+firstl+"ay"
+    if firstl = "a", "e", "i", "o", "u":
+        pig_latin = word+"ay"
     return pig_latin
 
 print(part_pig_latin("pig"))
@@ -44,3 +46,4 @@ def make_tags(tag, word):
     return "<" + tag + ">" + word + "</" + tag + ">"
 
 print(make_tags('i', 'brown'))
+print(part_pig_latin(apple
