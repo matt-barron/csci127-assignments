@@ -19,10 +19,14 @@ def build_random_list(size,max_value):
 print(build_random_list(10,99))
 
 def locate(l,value):
-    if value in l:
-        return l.index(value)
-    else:
-        return "-1"
+   i = 0
+   found_index=-1
+   for i in range(len(l)):
+       if l[i]==value:
+           found_index = i
+           break #breaks out of the current loop
+       i+=1
+   return found_index
 print(locate([1,2,3,3,4,5,6],4))
 print(locate([12,42,"pi",88],14))
 
@@ -60,11 +64,12 @@ def pal(l):
         return "false"      
 print(pal([4,2,2,4]))
 def increasing(l):
+    increasing = True 
     i=0
-    a=0
-    b=a+1
-    while i <= len(l)-1:
-        a+=1       
-        if l[b]>l[a]:
-            return "increasing"  
+    while i <= len(l)-1:       
+        if l[i]>l[i+1]:
+            increasing = False
+            break
+        i+=1
+    return increasing 
 print(increasing([1,9,1,1]))
