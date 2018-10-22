@@ -15,5 +15,10 @@ def compress_word(w):
 print(compress_word("hello"))
 print(compress_word("apple"))
 def sentence(line):
-   return compress_word(line)
+   linelist= line.split()
+   news=[]
+   for i in range(len(linelist)):
+       news.append(compress_word(linelist[i]))
+    
+   return "".join(news)
 print(sentence("i like apple pies"))
