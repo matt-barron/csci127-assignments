@@ -15,8 +15,5 @@ def compress_word(w):
 print(compress_word("hello"))
 print(compress_word("apple"))
 def sentence(line):
-
-    return compress_word(line)
-print(sentence(" who is there"))
-print(sentence("i like to eat apple pie"))
-
+   return compress_word(line)
+print(sentence("i like apple pies"))
