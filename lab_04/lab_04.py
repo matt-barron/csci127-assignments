@@ -3,7 +3,7 @@ import random
 prompt = 'This is the <adjective> <noun> that we have to <adverb> <verb>'
 verbList = ['eat', 'truncate', 'defile', 'sabotage', 'slap', 'lick']
 nounList = ['heron', 'dog', 'troglodyte', 'roommate', 'pet', 'murderer']
-adjectiveList = ['loquacious', 'brooding', 'large', 'smooth', 'bumpy']
+adjectiveList = ['smelly', 'imposing', 'large', 'tiny']
 adverbList = ['smoothly', 'irritably']
 
 def madLib (prompt):
