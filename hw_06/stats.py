@@ -1,4 +1,4 @@
-
+import time 
 import random
 list = []
 for i in range(100):
@@ -16,23 +16,25 @@ def max(l):
 def freq(l,val):
     f = 0
     for i in l:
-        if l[i] == val:
+        if i == val:
             f = f + 1
     return f
 
 
 def mode(l):
     li=0
-    a=[]
-    for i in l:
-        if freq(l, l[i]) >= freq(l,l[li]):
+    a=l[0]
+    msf=freq(l, l[0])
+    for i in range(len(l)):
+        test_freq=freq(l,l[i])
+        if test_freq>msf:
+            a=l[i]
             li=i
-
-    a.append(l[li])
-    return a
+            msf=test_freq
+    return "mode:", a
 
 print(max(list))
 print (freq(list, 6))
-print(freq([1,2,2,2,2,3,4,5], 1))
+print(freq([1,2,2,2,2,3,4,5], 2))
 print(mode([1,2,2,2,3,4,5]))
 print(mode([1,1,1,1,2,4]))
