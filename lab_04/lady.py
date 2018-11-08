@@ -70,3 +70,10 @@ print(happyLadybugs("__"))
 print(happyLadybugs("AABB"))
 print(happyLadybugs("X_Y__X"))
 print(happyLadybugs("B_RRBR"))
+'''no spaces
+no happy configuration
+range should be range(len(b-1))
+if "_" in b
+need at least two ladybugs of each color and at least one empty cell
+'''
+
