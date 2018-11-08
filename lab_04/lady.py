@@ -1,79 +1,48 @@
-def noUnhappy(b):
-   alpha=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-   happy=False
-   for i in range(len(b)):
-        if b[i] not in alpha and b[i] == "_":
-            happy= True
-        else:
-            happy=False
-   return happy
-def adjacentcell(b):
-    adjacent= False
+def no_letters(b):
+    alpha=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    happy=False
     for i in range(len(b)):
-        if i == 0:
-           if b[i] == b[i+1]:
-               adjacent = True
-           else:
-                adjacent = False
-                break
-        elif i == (len(b)-1):
-            if b[i-1] == b[i]:
-                adjacent = True
-            else:
-                adjacent = False
-                break
-        elif b[i] == b[i+1] or b[i] == b[i-1]:
-          adjacent = True
+         if b[i] not in alpha and b[i] == "_":
+             happy= True
+         else:
+             happy=False
+    return happy
+def adjacent(b):
+    adjacent = False
+    for i in range(len(b)):
+        if b[i] != "_":
+            if i != 0 and i != len(b)-1:
+                if b[i] == b[i+1] or b[i] == b[i-1]:
+                    adjacent = True
+                else:
+                    adjacent = False
     return adjacent
-
-def underscore(b):
+def rr(b):
+    rr= False
+    dict= {}
     for i in b:
-        if i == "_":
-            return True        
-    return False
-        
-        
-def twoplus(b):
-    happybug = False
-    for i in b:
-        if i != "_":
-            count = 0
+        if i !="_":
+            dict[i]=0
             for c in b:
                 if i == c:
-                    count += 1
-            if count >= 2:
-                happybug = True
+                    dict[i]+=1
+            if dict[i] >=2 and "_" in b:
+                rr= True
             else:
-                happybug = False
+                rr= False
                 break
-    return happybug
-
-    return two
+    return rr
 def happyLadybugs(b):
-    alpha=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-    if b == "":
-        return "NO"
-    if  noUnhappy(b):
-        return "YES"
-    if adjacentcell(b):
-        return "YES"
-    elif underscore(b):
-        if twoplus(b):
-            return "YES"
-        else:
-            return "NO"
-    return "NO"
-
-    
-    
+    if no_letters(b):
+        return "Yes"
+    elif adjacent(b):
+        return "Yes"
+    elif rr(b):
+        return "Yes"
+    else:
+        return "No"
+    return "No"
 print(happyLadybugs("__"))
-print(happyLadybugs("AABB"))
+print(happyLadybugs("AABBB"))
 print(happyLadybugs("X_Y__X"))
 print(happyLadybugs("B_RRBR"))
-'''no spaces
-no happy configuration
-range should be range(len(b-1))
-if "_" in b
-need at least two ladybugs of each color and at least one empty cell
-'''
-
