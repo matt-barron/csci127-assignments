@@ -1,11 +1,16 @@
 def encode(s):
-    count1= 0
-    slist= list(s)
-    count = []
-    newl= []
-    for i in range(len(slist)-1):
-        if slist[i] == slist[i+1] or slist[i] == slist[i-1]:
-               count1 += 1
-        count.append([slist[i],count1])
-    return count
-print(encode("abbaaacddaaa"))
+    count = 1
+    list=[]
+    for i in range(1, len(s) + 1):
+        if i == len(s):
+            list.append([s[i - 1], str(count)])
+            break
+        else:
+           if s[i - 1] == s[i]:
+                count += 1
+           else:
+              list.append([s[i - 1], str(count)])
+              count = 1
+    return list
+print(rle("abbaa"))
+print(rle("abbaaacddaaa"))
