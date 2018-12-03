@@ -12,5 +12,5 @@ def encode(s):
               list.append([s[i - 1], str(count)])
               count = 1
     return list
-print(rle("abbaa"))
-print(rle("abbaaacddaaa"))
+print(encode("abbaa"))
+print(encode("abbaaacddaaa"))
